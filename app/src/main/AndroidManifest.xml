@@ -17,7 +17,8 @@
         
             
             </activity>
-            <activity android:name=".AquariumActivity" />
+            <activity android:name=".MainEventActivity" />
+            <activity android:name=".PopcornActivity" />
 
 
         </application>
