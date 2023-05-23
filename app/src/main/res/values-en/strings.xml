@@ -22,4 +22,5 @@
     <string name="alerte_informations">Informations</string>
     <string name="alerte_urgent">Emergency</string>
     <string name="alerte_envoyer">Send</string>
+    <string name="alerte_confirmer">Send ?</string>
 </resources>

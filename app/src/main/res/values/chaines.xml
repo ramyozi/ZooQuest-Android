@@ -23,4 +23,19 @@
     <string name="alerte_informations">Informations</string>
     <string name="alerte_urgent">Urgent</string>
     <string name="alerte_envoyer">Envoyer</string>
+    
+    <array name="alerte_lieux" translatable="false">
+        <item>Colomiers</item>
+        <item>Blagnac</item>
+        <item>Empalot</item>
+        <item>Campans</item>
+        <item>Labege</item>
+        <item>Minimes</item>
+        <item>Union</item>
+        <item>Cugnaux</item>
+        <item>Autres</item>
+    </array>
+    <string name="alerte_confirmer">Voulez-vous envoyer ?</string>
+
+
 </resources>
