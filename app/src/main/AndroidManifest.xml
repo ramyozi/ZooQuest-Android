@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <!-- balise principale de l'appli -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         tools:targetApi="31">
-        <activity android:name=".CardActivity"
-            android:exported="true">
+        <activity android:name=".AccueilActivity"
+            android:exported="true" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
-        
-            
-            </activity>
-            <activity android:name=".MainEventActivity" />
-            <activity android:name=".PopcornActivity" />
+        </activity>
+        <activity android:name=".CarteActivity"
+            android:label="@string/carte_titre" />
+        <activity android:name=".AquariumActivity"
+            android:label="@string/aquarium_titre" />
+        <activity android:name=".PopcornActivity"
+            android:label="@string/popcorn_titre" />
+        <activity android:name=".AlerteActivity"
+            android:label="@string/alerte_titre" />
 
-
-        </application>
-
-
+        <!-- exemple de reception d'intention explicites :
+        <activity android:name=".MP3ReaderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.OPEN_DOCUMENT" />
+                <data android:mimeType="audio/mp3" />
+            </intent-filter>
+        </activity> -->
+    </application>
 
 </manifest>

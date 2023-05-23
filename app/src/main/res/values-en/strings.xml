@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="carte_titre">Main map</string>
+    <string name="aquarium_titre">Aquarium map</string>
+    <string name="popcorn_titre">Popcorn</string>
+    <string name="carte_bienvenue">Welcome</string>
+    <string name="popcorn_avertissement">Do not give popcorn to the %2$s (%1$d %3$s)</string>
+    <array name="popcorn_especes">
+        <item>fishes</item>
+        <item>tortoises</item>
+        <item>dolphins</item>
+    </array>
+    <plurals name="popcorn_secondes">
+        <item quantity="one">second</item>
+        <item quantity="other">seconds</item>
+    </plurals>
+    <string name="accueil_soustitre">Official app</string>
+    <string name="accueil_infos">This is l\'application officielle interne du zoo de Labège.\nEn cas de bug ou pour plus d\'informations, contacter Ann au 0678787878 .</string>
+    <string name="alerte_titre">Warning</string>
+    <string name="alerte_intitule">Label</string>
+    <string name="alerte_lieu">Location</string>
+    <string name="alerte_informations">Informations</string>
+    <string name="alerte_urgent">Emergency</string>
+    <string name="alerte_envoyer">Send</string>
+</resources>

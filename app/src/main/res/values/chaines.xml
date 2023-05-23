@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name" translatable="false">ZooQuest</string>
+    <string name="carte_titre">Carte principale</string>
+    <string name="aquarium_titre">Carte de l\'aquarium</string>
+    <string name="popcorn_titre">Popcorn</string>
+    <string name="carte_bienvenue">Bienvenue</string>
+    <string name="popcorn_avertissement">Ne pas donner de popcorn aux %2$s (%1$d %3$s)</string>
+    <array name="popcorn_especes">
+        <item>poissons</item>
+        <item>tortues</item>
+        <item>poulpes</item>
+    </array>
+    <plurals name="popcorn_secondes">
+        <item quantity="one">seconde</item>
+        <item quantity="other">secondes</item>
+    </plurals>
+    <string name="accueil_soustitre">Appli officielle</string>
+    <string name="accueil_infos">Ceci est l\'application officielle interne du <b>zoo de Labège</b>, 450000m<sup><small>2</small></sup> d\'enclos.\nEn cas de bug ou pour plus d\'informations, contacter Ann au 0678787878 .</string>
+    <string name="stub" translatable="false">*****</string>
+    <string name="alerte_titre">Alerte</string>
+    <string name="alerte_intitule">Intitulé</string>
+    <string name="alerte_lieu">Lieu</string>
+    <string name="alerte_informations">Informations</string>
+    <string name="alerte_urgent">Urgent</string>
+    <string name="alerte_envoyer">Envoyer</string>
+</resources>

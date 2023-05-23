@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_intitule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alerte_intitule"
+        android:labelFor="@id/et_intitule" />
+
+    <EditText
+        android:id="@+id/et_intitule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text|textCapSentences"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tv_lieu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alerte_lieu"
+        android:labelFor="@id/et_lieu" />
+
+    <EditText
+        android:id="@+id/et_lieu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text|textCapWords"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tv_informations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alerte_informations"
+        android:labelFor="@id/et_informations" />
+
+    <EditText
+        android:id="@+id/et_informations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="" />
+
+    <CheckBox
+        android:id="@+id/cb_urgent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alerte_urgent" />
+
+    <Button
+        android:id="@+id/bt_envoyer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alerte_envoyer"
+        android:onClick="envoyer" />
+</LinearLayout>
