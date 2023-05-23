@@ -42,8 +42,11 @@
     <EditText
         android:id="@+id/et_informations"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="start|top"
+
+        android:inputType="text|textMultiLine|textCapSentences"
         android:text="" />
 
     <CheckBox

@@ -8,7 +8,16 @@
         android:id="@+id/tv_soustitre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/accueil_soustitre" />
+        android:text="@string/accueil_soustitre"
+
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:padding="20dp"
+        android:background="#32CD32"
+
+
+        />
 
     <TextView
         android:id="@+id/tv_infos"
