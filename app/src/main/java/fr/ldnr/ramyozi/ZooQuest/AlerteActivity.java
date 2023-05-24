@@ -3,6 +3,7 @@ package fr.ldnr.ramyozi.ZooQuest;
 
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -28,6 +29,10 @@ public class AlerteActivity extends Activity {
     }
 
         public void envoyer(View view) {
+            SharedPreferences sp = getSharedPreferences("zoo", MODE_PRIVATE);
+            if(! sp.getBoolean("envoi", true) )
+                return;
+
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.alerte_titre);
             builder.setMessage(R.string.alerte_confirmer);
