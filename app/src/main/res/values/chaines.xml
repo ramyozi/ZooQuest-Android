@@ -35,7 +35,8 @@
         <item>Cugnaux</item>
         <item>Autres</item>
     </array>
-    <string name="alerte_confirmer">Voulez-vous envoyer ?</string>
-
+    <string name="alerte_confirmer">Voulez-vous envoyer ?</string>+
+    <string name="menu_options">Options</string>
+    <string name="menu_envoi">Envoi</string>
 
 </resources>

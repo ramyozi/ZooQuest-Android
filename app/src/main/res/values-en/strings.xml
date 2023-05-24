@@ -23,4 +23,6 @@
     <string name="alerte_urgent">Emergency</string>
     <string name="alerte_envoyer">Send</string>
     <string name="alerte_confirmer">Send ?</string>
+    <string name="menu_options">Preferences</string>
+    <string name="menu_envoi">Send</string>
 </resources>

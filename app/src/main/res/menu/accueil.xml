@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_carte"
+        android:title="@string/carte_titre"
+        android:icon="@android:drawable/ic_menu_mapmode" />
+    <item android:id="@+id/menu_options"
+        android:title="@string/menu_options"
+        android:icon="@android:drawable/ic_menu_preferences">
+        <menu>
+            <item android:id="@+id/menu_envoi"
+                android:title="@string/menu_envoi"
+                android:icon="@android:drawable/ic_menu_send"/>
+        </menu>
+    </item>
+</menu>
