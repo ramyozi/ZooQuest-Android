@@ -2,14 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/menu_carte"
         android:title="@string/carte_titre"
-        android:icon="@android:drawable/ic_menu_mapmode" />
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:showAsAction="ifRoom" />
     <item android:id="@+id/menu_options"
         android:title="@string/menu_options"
-        android:icon="@android:drawable/ic_menu_preferences">
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:showAsAction="ifRoom">
         <menu>
             <item android:id="@+id/menu_envoi"
                 android:title="@string/menu_envoi"
-                android:icon="@android:drawable/ic_menu_send"/>
+                android:icon="@android:drawable/ic_menu_send"
+                android:checkable="true" />
         </menu>
     </item>
 </menu>

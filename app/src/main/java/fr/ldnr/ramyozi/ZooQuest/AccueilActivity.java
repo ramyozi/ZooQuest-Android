@@ -2,19 +2,24 @@ package fr.ldnr.ramyozi.ZooQuest;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+
 
 public class AccueilActivity extends Activity implements View.OnClickListener {
     @Override
@@ -62,14 +67,37 @@ public class AccueilActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         // pas nécessaire : if(view.getId()==R.id.bt_carte) {
-            Intent i = new Intent(this, CarteActivity.class);
-            startActivity(i);
+        Intent i = new Intent(this, CarteActivity.class);
+        startActivity(i);
         // }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.accueil, menu);
+        SharedPreferences sp = getSharedPreferences("zoo", MODE_PRIVATE);
+        MenuItem mi = menu.findItem(R.id.menu_envoi);
+        // true : par defaut, si on est pas encore passé par onMenuItemSelected()
+        mi.setChecked(sp.getBoolean("envoi", true));
         return true;
     }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, @NonNull MenuItem item) {
+        if(item.getItemId()==R.id.menu_carte) {
+            startActivity(new Intent(this, CarteActivity.class));
+        }
+        if(item.getItemId()==R.id.menu_envoi) {
+            item.setChecked( ! item.isChecked());
+
+            SharedPreferences sp = getSharedPreferences("zoo", MODE_PRIVATE);
+            SharedPreferences.Editor e = sp.edit();
+            e.putBoolean("envoi", item.isChecked());
+            e.commit();
+
+        }
+        return true;
+    }
+
 }
