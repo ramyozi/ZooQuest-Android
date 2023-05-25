@@ -28,6 +28,10 @@
         <activity android:name=".AlerteActivity"
             android:label="@string/alerte_titre" />
 
+        <activity android:name=".AnimalActivity"
+            android:label="@string/animal_titre" />
+
+
         <!-- exemple de reception d'intention explicites :
         <activity android:name=".MP3ReaderActivity">
             <intent-filter>

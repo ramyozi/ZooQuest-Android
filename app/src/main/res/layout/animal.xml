@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_animal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="" />
+
+    <Button
+        android:id="@+id/bt_envoyer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/animal_envoyer" />
+
+    <TextView
+        android:id="@+id/tv_wiki"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+</LinearLayout>

@@ -25,4 +25,6 @@
     <string name="alerte_confirmer">Send ?</string>
     <string name="menu_options">Preferences</string>
     <string name="menu_envoi">Send</string>
+    <string name="animal_titre">Animal</string>
+    <string name="animal_envoyer">Send</string>
 </resources>

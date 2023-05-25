@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">ZooQuest</string>
+    <string name="app_name" translatable="false">Zoo de Labège</string>
     <string name="carte_titre">Carte principale</string>
     <string name="aquarium_titre">Carte de l\'aquarium</string>
     <string name="popcorn_titre">Popcorn</string>
@@ -23,20 +23,16 @@
     <string name="alerte_informations">Informations</string>
     <string name="alerte_urgent">Urgent</string>
     <string name="alerte_envoyer">Envoyer</string>
-    
     <array name="alerte_lieux" translatable="false">
-        <item>Colomiers</item>
-        <item>Blagnac</item>
-        <item>Empalot</item>
-        <item>Campans</item>
-        <item>Labege</item>
-        <item>Minimes</item>
-        <item>Union</item>
-        <item>Cugnaux</item>
-        <item>Autres</item>
+        <item>Enclos des ours</item>
+        <item>Enclos des loups</item>
+        <item>Buvette</item>
+        <item>Accueil</item>
+        <item>Chemin central</item>
     </array>
-    <string name="alerte_confirmer">Voulez-vous envoyer ?</string>+
+    <string name="alerte_confirmer">Voulez-vous envoyer ?</string>
     <string name="menu_options">Options</string>
     <string name="menu_envoi">Envoi</string>
-
+    <string name="animal_titre">Animal</string>
+    <string name="animal_envoyer">Envoyer</string>
 </resources>

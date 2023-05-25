@@ -150,6 +150,10 @@ public class AccueilActivity extends Activity implements View.OnClickListener {
             e.putBoolean("envoi", item.isChecked());
             e.commit();
         }
+        if(item.getItemId()==R.id.menu_animal) {
+            startActivity(new Intent(this, AnimalActivity.class));
+        }
+
         return true;
     }
 }
