@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,9 +13,18 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
 
 public class AnimalActivity extends Activity implements View.OnClickListener {
 
@@ -50,18 +60,37 @@ public class AnimalActivity extends Activity implements View.OnClickListener {
             Log.i("AnimalActivity", "Appel de "+url);
 
 
-            String contenuHtml = "????";
+            URLConnection conn = new URL(url).openConnection();
+            String tout = "";
+            try(InputStream is = conn.getInputStream()) {
+                BufferedReader br = new BufferedReader(
+                        new InputStreamReader(is, Charset.forName("UTF-8")));
+                String ligne;
+                while((ligne=br.readLine())!=null)
+                    tout += ligne + "\n";
+                Log.i("AnimalActivity", "Lu : "+tout);
+            }
+            // (racine) > query > pages > (numero) > extract
+            JSONObject racine = new JSONObject(tout);
+            JSONObject query = racine.getJSONObject("query");
+            JSONObject pages = query.getJSONObject("pages");
+            String numeroPage = pages.keys().next();
+            JSONObject page = pages.getJSONObject(numeroPage);
+            String contenuHtml = page.getString("extract");
+
             uiHandler.post(new Runnable() {
                 @Override
                 public void run() {
                     TextView tvWiki = findViewById(R.id.tv_wiki);
-                    tvWiki.setText(contenuHtml);
+                    tvWiki.setText(Html.fromHtml(contenuHtml));
                 }
             });
-        } catch(Exception ex) {
-            Log.e("AnimalActivity", "Erreur vers WP", ex);
         }
+     catch(Exception ex) {
+        Log.e("AnimalActivity", "Erreur vers Wikipedia", ex);
     }
+
+}
 }
 
 
