@@ -1,9 +1,14 @@
 package fr.ldnr.ramyozi.ZooQuest;
 
+
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,9 +21,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+import java.util.Date;
 
 
 public class AccueilActivity extends Activity implements View.OnClickListener {
@@ -28,6 +37,52 @@ public class AccueilActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.accueil);
         lireNouvelles();
         preparerBoutons();
+        if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
+                PackageManager.PERMISSION_GRANTED) {
+            enregistrerOuverture();
+        } else {
+            requestPermissions(new String[] {
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+            }, 0);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        if(requestCode==0 &&
+                permissions[0].equals(Manifest.permission.WRITE_EXTERNAL_STORAGE) ) {
+            if(grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                enregistrerOuverture();
+            } else {
+                // rien ou requestPermission ou Toast.... ou finish() ...
+                Log.i("AccueilActivity", "L'utilisateur a refusé l'écriture sur SDCard");
+            }
+        }
+    }
+
+    private void enregistrerOuverture() {
+        Log.i("AccueilActivity", "Enregistrement de l'ouverture");
+        //TODO enregistrer dans la SDCard
+        // import android.text.format.DateFormat; et java.util.Date
+        DateFormat df = new DateFormat();
+        // 2023-05-25 08:54 Ouverture de l'application
+        String line = df.format("yyyy-MM-dd hh:mm", new Date())+" Ouverture\n";
+        if(Environment.getExternalStorageState().equals(
+                Environment.MEDIA_MOUNTED)) {
+            try {
+                File repertoire = Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_DOWNLOADS);
+                File fichier = new File(repertoire, "zoo.log.txt");
+                try(FileWriter fw = new FileWriter(fichier, true)) {
+                    fw.write(line);
+                }
+                Log.i("AccueilActivity", "Enregistrement terminé");
+            } catch(IOException ex) {
+                Log.e("AccueilActivity", "Erreur ecriture log", ex);
+            }
+        }
     }
 
     private void lireNouvelles() {
@@ -72,7 +127,6 @@ public class AccueilActivity extends Activity implements View.OnClickListener {
         // }
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.accueil, menu);
@@ -95,9 +149,8 @@ public class AccueilActivity extends Activity implements View.OnClickListener {
             SharedPreferences.Editor e = sp.edit();
             e.putBoolean("envoi", item.isChecked());
             e.commit();
-
         }
         return true;
     }
-
 }
+
